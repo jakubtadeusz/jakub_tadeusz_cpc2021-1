@@ -1,0 +1,22 @@
+﻿@model BandViewModel
+
+@{List<AlbumViewModel> Albums = ViewBag.Albums;
+}
+
+
+<h1>@Model.BandName</h1>
+<img src="@Url.Content(Model.BandImage)" alt="@Model.BandImage" />
+<h2>Albums</h2>
+<ul class="list-unstyled">
+    @foreach (var album in Albums)
+    {
+    <li>
+        <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 70%">
+            <img src='@Url.Content(album.AlbumImage)' alt="@album.AlbumName" class="img-thumbnail" style="height: 100px; width: 100px;" />
+            <h3 style="width: 30%">@Html.ActionLink(album.AlbumName, "GetAlbum", "Home", new { albumName = album.AlbumName }, null)</h3>
+            <div style="width: 20%">@album.AlbumReleaseDate.Date.ToString("yyyy")</div>
+            <h4>Price: @album.Price</h4>
+        </div>
+    </li>
+    }
+</ul>

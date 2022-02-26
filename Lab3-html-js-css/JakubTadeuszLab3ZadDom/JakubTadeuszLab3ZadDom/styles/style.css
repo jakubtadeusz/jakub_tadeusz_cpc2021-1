@@ -1,0 +1,83 @@
+﻿
+header {
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 99%;
+    background-color: #232228;
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 0.5%;
+    text-align: left;
+    box-shadow: 5px 5px 15px 5px #121214;
+}
+
+body {
+    background-color: #16151a;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.header-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 10px;
+    height: 25px;
+}
+
+a {
+    color: inherit; 
+    text-decoration: inherit; 
+}
+
+h3 {
+    background-color: #ee070d;
+    padding: 5px;
+    width: 20%;
+    box-shadow: 5px 5px 15px -5px black;
+    border-radius: 25%;
+}
+
+button {
+    font-weight: bold;
+    width: 50px;
+    height: 30px;
+    margin: 10px;
+    background-color: #fc0e0e;
+    color: white;
+    border-radius: 10%;
+    border: 1px solid #fc0e0e;
+    box-shadow: 5px 5px 15px -5px black;
+}
+
+input {
+    font-weight: bold;
+    background-color: #f0f5f9;
+    color: black;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 10px solid #dbdcde;
+    box-shadow: 5px 5px 15px -5px black;
+    width:  60px;
+    text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.text-section{
+    margin-top: 30px;
+    margin-left: 20%;
+    margin-right: 10%;
+    text-align: left;
+}
+

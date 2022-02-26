@@ -1,0 +1,15 @@
+﻿@model Beast
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+<!--Wyświetla informacje dotyczące potwora-->
+<div class="text-left">
+    <h1 class="display-4">@Model.Name</h1>
+    <h4 class="col-md-4">@Model.Type.Name</h4>
+    <div class="col-md-10 description">@Model.Description</div>
+    @if(Model.MarketValue != 0)
+            {
+                <div class="col-md-4"><h5>Cena rynkowa:</h5>@Model.MarketValue</div>
+            }
+</div>

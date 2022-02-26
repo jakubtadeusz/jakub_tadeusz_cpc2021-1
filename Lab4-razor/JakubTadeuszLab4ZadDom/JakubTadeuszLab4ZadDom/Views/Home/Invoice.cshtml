@@ -1,0 +1,7 @@
+﻿@{ 
+    InvoiceData invoice = ViewBag.Invoice;
+}
+
+<h1>Congratulations @invoice.Name @invoice.Surname!</h1>
+<h3>Your invoice document will be send to: @invoice.Email</h3>
+<h3>Invoice amount: @invoice.Value</h3>

@@ -1,0 +1,34 @@
+﻿@model AlbumViewModel
+
+
+
+
+<h1>@Model.AlbumName</h1>
+@Html.ActionLink(Model.Author, "GetBand", "Home", new { bandName = Model.Author }, null)
+<br />
+<img src="@Url.Content(Model.AlbumImage)" alt="@Model.AlbumName" />
+<h3>Songs</h3>
+<ul class="list-unstyled">
+    @foreach (SongViewModel song in ViewBag.Songs)
+    {
+        <li style="display: flex; flex-direction: row; align-items: center">
+            <div style="width: 50%; margin: 20px">@song.SongName @song.SongLength</div>
+            @{string youtubeLink = ("https://www.youtube.com/results?search_query=" + song.Author + "+" + song.SongName).Replace(" ", "+");
+            }
+            <a href=@youtubeLink target="_blank"><img src="~/play_icon.png" style="width: 50px; height: 50px" /></a>
+        </li>
+    }
+</ul>
+
+@using (Html.BeginForm("Cart", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.AlbumName)
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Buy!" class="btn btn-success" />
+        </div>
+    </div>
+}
+
+

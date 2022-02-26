@@ -1,0 +1,31 @@
+﻿@model BeastType
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+<!--Kontener z detala dotyczącymi typu potwora-->
+<div class="text-left">
+    <h1 class="display-4">@Model.Name</h1>
+    <div class="col-md-10 description">@Model.Description</div>
+</div>
+<!--Tabela z bestiami danego typu-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Znane potwory:</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var beast in Model.Beasts)
+        {
+            <tr>
+                <td>@Html.ActionLink(beast.Name, "Beast", "Bestiary", routeValues: new { id = beast.Id })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<!--Przycisk pozwalający na dodanie nowego potwora-->
+<p>
+    @Html.ActionLink("Dodaj nowego potwora", "CreateBeast", "Bestiary", routeValues: new { id = Model.Id })
+</p>

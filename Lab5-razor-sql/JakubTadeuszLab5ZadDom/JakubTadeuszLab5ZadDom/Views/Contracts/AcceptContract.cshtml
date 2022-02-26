@@ -1,0 +1,22 @@
+﻿@model Contract
+
+@{
+    var witchers = ViewBag.Witchers;
+    ViewData["Title"] = Model.Name;
+}
+
+<!--Formularz pozwalający na wybranie wiedźmina przypisanego do zadania-->
+@using (Html.BeginForm("AcceptContract", "Contracts", FormMethod.Post))
+{
+    @Html.DropDownListFor(model => model.WitcherId, new SelectList(witchers, "Id", "Name"));
+    @Html.HiddenFor(model => model.Id);
+    @Html.HiddenFor(model => model.Name);
+    @Html.HiddenFor(model => model.Description);
+    @Html.HiddenFor(model => model.DateAdded);
+    @Html.HiddenFor(model => model.ContractorName);
+    @Html.HiddenFor(model => model.PhoneNumber);
+    @Html.HiddenFor(model => model.Prize);
+    @Html.HiddenFor(model => model.Region);
+    @Html.HiddenFor(model => model.Status);
+    <input type="submit" value="Akceptuj" class="btn btn-primary" />
+}

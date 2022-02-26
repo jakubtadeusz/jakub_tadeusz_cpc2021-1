@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><div class="header-item">Home</div></a>
+        <a href="chordscreator.html"><div class="header-item">Chords creator</div></a>
+        <a href="chords.html"><div class="header-item" style="background-color: #ee070d">Guitar chords</div></a>
+        <a href="metronome.html"><div class="header-item">Metronome</div></a>
+        <link href="styles/style.css" rel="stylesheet" type="text/css" />
+        <link href="styles/chords.css" rel="stylesheet" type="text/css" />
+    </header>
+    <h1>Guitar chords</h1>
+
+    <div id="chords-slideshow">
+    </div>
+    <br />
+    <div id="chord-dots" style="display: flex; flex-direction: row; justify-content: center;">
+    </div>
+    <section class="text-section">
+        To train the transitions chords transitions, you can use the metronome<br />
+        Choose one of our presets and change the chord you are playing on the cymbal sound.<br />
+        Remember to setu p the BPM you are comfortable with. <br />
+        <button onclick="RunMetronome([1, 0, 0, 0, 1, 0, 0, 0]);">4-4</button> - the 8 beats bar with change after the fourth chord <br />
+        <button onclick="RunMetronome([1, 0, 0, 0, 0, 0, 1, 0]);">6-2</button> - the 8 beats bar with change after the sixth chord <br />
+        <button onclick="RunMetronome([1, 0, 0, 1, 0, 1, 0, 0]);">3-2-3</button> - 3 chords, 2 chords and 3 chords again, you can use this one to train transitions between three different chords or you can change the chords order for each bar <br />
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/chords.js"></script>
+    <script src="scripts/chordscreator.js"></script>
+    <script>
+        LoadChords();
+    </script>
+</body>
+</html>

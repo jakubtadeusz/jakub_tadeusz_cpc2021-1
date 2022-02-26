@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Contract>
+
+@{
+    ViewData["Title"] = "Zlecenia";
+}
+<!--Przycisk pozwalający na dodanie nowego ogłoszenia-->
+<p>
+    @Html.ActionLink("Dodaj nowe ogłoszenie!", "CreateContract", "Contracts", null, new {@class="btn btn-primary" })
+</p>
+
+<!--Formularz pozwalający na uruchomienie wersji strony z ukończonymi zleceniami-->
+@using (Html.BeginForm("Index", "Contracts", FormMethod.Post))
+{
+    <input type="checkbox" id="show-finished" name="showFinished" />
+    <label for="show-finished">Wyświetl ukończone</label>
+    <input type="submit" value="Odśwież" class="btn btn-primary" />
+}
+
+<!--Kontener zawierający dostępne zlecenia-->
+<div id="contracts">
+    @foreach (var contract in Model)
+    {
+        <div class="contract-item">
+            <h3>@contract.Name</h3>
+            @if (contract.Prize != null)
+            {
+                <h4>Nagroda: </h4>@contract.Prize
+            }
+            else
+            { <h4>Nagroda: </h4><div> do negocjacji</div>
+            }
+            <h4>Kontakt: </h4>@contract.PhoneNumber
+            <h4>Data dodania: </h4>@contract.DateAdded
+            <h4>Opis:</h4><i class="description">@contract.Description</i>
+            @switch (contract.Status)
+            {
+                case ContractStatus.Completed:
+                    <div id="completed"><h4>Status: </h4><div>zakończone przez:</div></div>
+                    <div>Wiedźmin: @contract.Witcher.Name     Tel: @contract.Witcher.PhoneNumber</div> break;
+                case ContractStatus.Failed:
+                    <div id="failed"><h4>Status: </h4><div>nieukończone przez:</div></div>
+                    <div>Wiedźmin: @contract.Witcher.Name     Tel: @contract.Witcher.PhoneNumber</div> break;
+                case ContractStatus.InProgress:
+                    <div id="in-progress"><h4>Status: </h4><div>w trakcie:</div></div>
+                    <div>Wiedźmin: @contract.Witcher.Name     Tel: @contract.Witcher.PhoneNumber</div> break;
+                case ContractStatus.New:
+                    <div>@Html.ActionLink("Zgłoś się!", "AcceptContract", "Contracts", routeValues: new { id = contract.Id }, new { @class = "btn btn-secondary" })</div>break;
+            }
+            <div>@Html.ActionLink("Edytuj", "EditContract", "Contracts", routeValues: new { id = contract.Id }, new { @class = "btn btn-light" })</div>
+            <div>@Html.ActionLink("Usuń", "DeleteContract", "Contracts", routeValues: new { id = contract.Id }, new { @class = "btn btn-light" })</div>
+        </div>
+    }
+</div>

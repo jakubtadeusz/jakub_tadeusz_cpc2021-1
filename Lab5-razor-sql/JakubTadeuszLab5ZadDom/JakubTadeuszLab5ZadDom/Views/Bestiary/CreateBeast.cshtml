@@ -1,0 +1,23 @@
+﻿@model Beast
+
+@{
+    ViewData["Title"] = "Dodaj bestię";
+}
+<!--Formularz tworzący potwora-->
+@using (Html.BeginForm("CreateBeast", "Bestiary", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.TypeId)
+    <div class="form-group">
+        Nazwa
+        <div class="col-md">@Html.TextBoxFor(model => model.Name, new { placeholder = "Podaj nazwę..." })</div>
+    </div>
+    <div class="form-group">
+        Opis
+        <div class="col-md">@Html.TextAreaFor(model => model.Description, new { style = "width: 60%; height: 200px;", placeholder = "Podaj opis..." })</div>
+    </div>
+    <div class="form-group">
+        Cena rynkowa
+        <div class="col-md">@Html.EditorFor(model => model.MarketValue, new { placeholder = "Podaj cenę..." })</div>
+    </div>
+    <input type="submit" value="Dodaj potwora" class="btn btn-primary" />
+}

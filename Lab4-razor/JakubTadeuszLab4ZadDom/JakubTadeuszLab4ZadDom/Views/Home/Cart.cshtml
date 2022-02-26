@@ -1,0 +1,38 @@
+﻿@model AlbumViewModel
+@{
+    List<AlbumViewModel> cart = (List<AlbumViewModel>)TempData["cart"];
+}
+
+    @if (Model != null)
+    {
+        decimal sum = new decimal(0); 
+        <h1>Cart:</h1>
+        <ul>
+            @foreach (AlbumViewModel item in cart)
+            {
+                sum += item.Price;
+                <li style="display: flex; flex-direction: row; justify-content: space-between; align-items: center">
+                    <img src='@Url.Content(item.AlbumImage)' alt="@item.AlbumName" class="img-thumbnail" style="height: 100px; width: 100px;" />
+                    <h3>@item.Author</h3>
+                    <h4>@item.AlbumName</h4>
+                    <h6>@item.Price</h6>
+                </li>
+            }
+        </ul>
+        <h2>Total: @sum</h2>
+        @using (Html.BeginForm("Finalize", "Home", FormMethod.Get))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.AlbumName);
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Finalize" class="btn btn-success" />
+                </div>
+            </div>
+        }
+
+    }
+    else
+    {
+         <h3>Cart is empty!</h3>
+    }

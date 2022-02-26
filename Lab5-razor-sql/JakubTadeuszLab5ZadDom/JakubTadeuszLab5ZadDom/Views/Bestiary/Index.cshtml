@@ -1,0 +1,27 @@
+﻿@model IEnumerable<BeastType>
+
+@{
+    ViewData["Title"] = "Bestiariusz";
+}
+
+<!--Tabela wyświetlająca znane typy bestii-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Typ potwora</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var beastType in Model)
+        {
+        <tr>
+            <td>@Html.ActionLink(beastType.Name, "BeastType", "Bestiary", routeValues: new { id = beastType.Id })</td>
+        </tr>
+        }
+    </tbody>
+</table>
+<!--Przycisk pozwalający na dodanie nowego typu potwora-->
+<p>
+    @Html.ActionLink("Dodaj nowy typ bestii", "CreateType", "Bestiary", null, new {@class="btn btn-primary" })
+</p>

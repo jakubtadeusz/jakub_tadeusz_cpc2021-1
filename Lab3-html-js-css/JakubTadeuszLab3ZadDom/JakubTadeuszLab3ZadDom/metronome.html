@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Metronome</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><div class="header-item">Home</div></a>
+        <a href="chordscreator.html"><div class="header-item">Chords creator</div></a>
+        <a href="chords.html"><div class="header-item">Guitar chords</div></a>
+        <a href="metronome.html"><div class="header-item" style="background-color: #ee070d">Metronome</div></a>
+        <link href="styles/style.css" rel="stylesheet" type="text/css" />
+        <link href="styles/metronome.css" rel="stylesheet" type="text/css" />
+    </header>
+    <h1>Metronome</h1>
+    <section id="metronome">
+        <div id="beat-buttons-group">
+        </div>
+
+        <section class="bar-amount-buttons">
+            <button id="remove-beat" onclick="RemoveBeat();">-</button>>
+            <button id="add-beat" onclick="AddBeat();">+</button>
+        </section>
+
+        <input type="number" id="metronome-bpm" value="80" />
+        <button id="metronome-button" onclick="StartMetronome();">Start</button>
+
+    </section>
+    <section class="text-section">
+        <h1>How to use:</h1>
+        To use the metronome, you need to set the choosen BPM (Beats per minute) using the input field or tempo tapping button <button>Tap</button><br />
+        Then, you need to specify the beats amount in one bar using the <button>+</button> and <button>-</button> buttons. <br />
+        By clicking the beat indicators, you can change sound between the drum beat and cymbal. Both of the beat sounds comes from the Roland TR-808 drum machine.<br />
+        <button class="beat-button"></button> - Default drum beat sound <br />
+        <button class="beat-button" style="background-color: #3a4352"></button> - Cymbal sound <br />
+        After setting up the metronome, click <button>Start</button> button to begin. <br />
+        The red color highlights the current beat. While the metronome is working, you can freely change the beats amount or the beats sound.<br /> To change BPM, you need to restart using the <button>Stop</button> button.
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/metronome.js"></script>
+    <script>SetupMetronome();</script>
+</body>
+</html>

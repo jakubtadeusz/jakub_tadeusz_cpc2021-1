@@ -1,0 +1,52 @@
+﻿@model Contract
+
+@{
+    var witchers = ViewBag.Witchers;
+    ViewData["Title"] = Model.Name;
+}
+
+<!--Formularz służący edycji zlecenia-->
+@using (Html.BeginForm("EditContract", "Contracts", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.Id);
+    <div>Nazwa ogłoszenia: </div>
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.Name, new { style = "width: 40%", placeholder = "Podaj nazwę ogłoszenia..." })
+    </div>
+
+    <div>Imię osoby ogłaszającej: </div>
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.ContractorName, new { style = "width: 40%", placeholder = "Podaj swoje imię..." })
+    </div>
+
+    <div>Telefon osoby ogłaszającej: </div>
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.PhoneNumber, new { style = "width: 40%", placeholder = "Podaj numer kontaktowy..." })
+    </div>
+
+    <div>Nagroda: </div>
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.Prize, new { style = "width: 40%", placeholder = "Podaj nagrodę..." })
+    </div>
+
+    <div>Region: </div>
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.Region, new { style = "width: 40%", placeholder = "Podaj region, którego dotyczy ogłoszenie..." })
+    </div>
+
+    <div>Opis ogłoszenia: </div>
+    <div class="col-md-4">
+        @Html.TextAreaFor(model => model.Description, new { style = "width: 100%; height: 200px", placeholder = "Podaj opis ogłoszenia..." })
+    </div>
+
+    <div>Status zadania: </div>
+    <div class="col-md-4">
+        @Html.DropDownListFor(model => model.Status, new SelectList(Enum.GetValues(typeof(ContractStatus))))
+    </div>
+    <div>Wiedźmin przypisany do zadania: </div>
+    <div class="col-md-4">
+        @Html.DropDownListFor(model => model.WitcherId, new SelectList(witchers, "Id", "Name"))
+    </div>
+    <input type="submit" value="Akceptuj" class="btn btn-primary" />
+    @Html.ActionLink("Cofnij", "Index", "Contracts", null, new { @class = "btn btn-secondary" })
+}

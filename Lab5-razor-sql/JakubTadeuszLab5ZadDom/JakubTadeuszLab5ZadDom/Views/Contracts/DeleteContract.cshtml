@@ -1,0 +1,17 @@
+﻿@model Contract
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<!--Formularz potwierdzający, czy użytkownik chce usunąć zlecenie-->
+@using (Html.BeginForm("DeleteContract", "Contracts", FormMethod.Post))
+{
+    <h3>Czy chcesz usunąć zlecenie?</h3>
+    <div>Nazwa zlecenia: <b>@Model.Name</b></div>
+    <div>Zlecający: <b>@Model.ContractorName</b></div>
+    <div>Status zlecenia:: <b>@Model.Status</b></div>
+    <input type="submit" value="Usuń" class="btn btn-danger" />
+    <!--Przycisk pozwalający na wycofanie się-->
+    @Html.ActionLink("Cofnij", "Index", "Contracts", null, new {@class="btn btn-secondary" })
+}

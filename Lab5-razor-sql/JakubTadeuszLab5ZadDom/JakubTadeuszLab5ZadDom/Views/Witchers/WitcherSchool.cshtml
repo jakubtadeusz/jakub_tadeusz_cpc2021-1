@@ -1,0 +1,22 @@
+﻿@model WitcherSchool
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+<!--Kontener zawierający detale dotyczące szkoły wiedźmińskiej-->
+<div class="text-left">
+    <h1 class="display-4">@Model.Name</h1>
+    <h3>Kwatera główna: @Model.Headquarters</h3>
+    <div class="col-md-10 description">@Model.Description</div>
+
+    <!--Spis wiedźminów należących do szkoły-->
+    <h4>Wiedźmini: </h4>
+    @foreach (var witcher in Model.Witchers)
+    {
+        <div style="display: flex; flex-direction: row; padding-right: 40px">
+            <h6>@witcher.Name</h6>
+            <h6>@witcher.PhoneNumber</h6>
+        </div>
+    }
+<div> @Html.ActionLink("Dodaj wiedźmina", "CreateWitcher", "Witchers", routeValues: new { id = Model.Id }, new {@class="btn btn-primary" })</div>
+</div>

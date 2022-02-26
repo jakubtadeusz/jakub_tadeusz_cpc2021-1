@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "mWiedźmin";
+}
+
+<div class="text-center">
+    <img src="https://gfx.antyradio.pl/var/antyradio/storage/images/technologia/gadzety/w-katowicach-dziala-kuznia-kaer-morhen-mozna-w-niej-kupic-licencjonowane-miecze-z-wiedzmina-3-38528/11436711-1-pol-PL/W-Katowicach-dziala-kuznia-Kaer-Morhen.-Mozna-w-niej-kupic-licencjonowane-miecze-z-Wiedzmina-3_article.jpg" />
+    <h1 class="display-4">mWiedźmin</h1>
+    <p class="text-left">
+        Twoja oddalona od wioski chata jest oblegana przez przeklęte utopce? A może okoliczna czarownica rzuciła na ciebie uciążliwy urok? Już teraz, dzięki
+        nowej aplikacji <b>mWiedźmin</b>, możesz wywiesić ogłoszenie, skierowane do okolicznych zabójców potworów, bez wychodzenia z domu! (Nie ponosimy odpowiedzialności za szkody spowodowane unikaniem wypłacenia deklarowanej nagrody)
+    </p>
+    @Html.ActionLink("Dodaj nowe ogłoszenie!", "CreateContract", "Contracts", null, new { @class = "btn btn-primary" })
+
+    <p class="text-left">
+        Jesteś wiedźminem i potrzebujesz szybkiej gotówki? Szukasz wyzwania?  A może chcesz mieć dostęp do zleceń, które znajdują się dalej niż na tablicy ogłoszeniowej najbliższej zabitej dechami wioski? Jeżeli na któreś z tych pytań odpowiedziałeś tak, zapraszamy do zarejestrowania się i do odwiedzenia naszej internetowej tablicy ogłoszeniowej! (Uwaga! Zarejestrowani wiedźmini będą okazjonalnie sprawdzani przez Temerską policję w celu potwierdzenia, czy posiadają aktualną licencję wydawaną przez którąś z wiedźmińskich szkół)
+    </p>
+    @Html.ActionLink("Zarejestruj się jako wiedźmin!", "Index", "Witchers", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Przeglądaj ogłoszenia!", "Index", "Contracts", null, new { @class = "btn btn-primary" })
+
+    <p class="text-left">
+        Interesujesz się niebezpiecznymi bestiami? Odkryłeś nowy gatunek ghula? A może chciałbyś się dowiedzieć, co zagryza Ci kurczaki? Zapraszamy do skorzystania z naszego bestiariusza!
+    </p>
+    @Html.ActionLink("Bestiariusz", "Index", "Bestiary", null, new { @class = "btn btn-primary" })
+</div>

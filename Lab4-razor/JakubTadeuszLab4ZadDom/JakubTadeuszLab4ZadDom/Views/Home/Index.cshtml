@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<AlbumViewModel>
+
+<div class="text-center">
+    <h1>Latest albums</h1>
+    <div id="latest-albums">
+        <ul class="list-unstyled" style="display: flex; flex-direction: column; justify-content: flex-start;">
+            @foreach (var album in Model)
+            {
+                <li>
+                    <div style="display:flex; flex-direction: row; align-items: center;">
+                        <div style="flex-direction: column; justify-content: space-between; width: 20%;">
+                            <h4>@Html.ActionLink(album.AlbumName, "GetAlbum", "Home", new { albumName = album.AlbumName }, null)</h4>
+                            <h5>@Html.ActionLink(album.Author, "GetBand", "Home", new { bandName = album.Author }, null)</h5>
+                            <h5>Price: @album.Price zł</h5>
+                            <h6>Release: @album.AlbumReleaseDate.Date.ToString("dd/MM/yyyy")</h6>
+                        </div>
+                        <a href='@Url.Action("GetAlbum", "Home", new { albumName = album.AlbumName }, null)'>
+                            <img src='@Url.Content(album.AlbumImage)' alt="@album.AlbumName" class="img-thumbnail" style="height: 200px; width: 200px;" />
+                        </a>
+                    </div>
+                </li>
+            }
+        </ul class="list-unstyled">
+    </div>
+</div>

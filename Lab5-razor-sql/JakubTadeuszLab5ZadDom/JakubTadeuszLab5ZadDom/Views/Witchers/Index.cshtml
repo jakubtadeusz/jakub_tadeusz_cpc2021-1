@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WitcherSchool>
+
+@{
+    ViewData["Title"] = "Wiedźmini";
+}
+
+<!--Tabela wyświetlająca szkoły wiedźmińskie-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var witcherSchool in Model)
+        {
+        <tr>
+            <td>
+                <div style="display: flex; flex-direction: row; justify-content: space-between; text-align: center;">
+                    <h3>@Html.ActionLink(witcherSchool.Name, "WitcherSchool", "Witchers", routeValues: new { id = witcherSchool.Id })</h3>
+                    <div>@Html.ActionLink("Dodaj wiedźmina", "CreateWitcher", "Witchers", routeValues: new { id = witcherSchool.Id }, new {@class ="btn btn-secondary"})</div>
+                </div>
+                <!--Wypisanie wiedźminów należących do szkoły-->
+                @foreach (var witcher in witcherSchool.Witchers)
+                {
+            <div style="display: flex; flex-direction: row; justify-content: space-between; width: 40%">
+                <h6>@witcher.Name</h6>
+                <h6>@witcher.PhoneNumber</h6>
+            </div>
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    @Html.ActionLink("Dodaj nową szkołę wiedźmińską", "CreateSchool", "Witchers", null, new {@class="btn btn-primary" })
+</p>

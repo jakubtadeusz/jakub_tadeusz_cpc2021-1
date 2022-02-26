@@ -1,0 +1,18 @@
+﻿@model WitcherSchool
+<!--Formularz tworzący nową szkołę wiedźmińską-->
+@using (Html.BeginForm("CreateSchool", "Witchers", FormMethod.Post))
+{
+    <div class="form-group">
+        Nazwa
+        <div class="col-md">@Html.TextBoxFor(model => model.Name, new { style="width: 40%", placeholder = "Podaj nazwę..." })</div>
+    </div>    
+    <div class="form-group">
+        Nazwa
+        <div class="col-md">@Html.TextBoxFor(model => model.Headquarters, new { style = "width: 40%",placeholder = "Podaj nazwę kwatery głównej..." })</div>
+    </div>
+    <div class="form-group">
+        Opis
+        <div class="col-md">@Html.TextAreaFor(model => model.Description, new { style = "width: 60%; height: 200px;", placeholder = "Podaj opis.." })</div>
+    </div>
+    <input type="submit" value="Dodaj nową szkołę wiedźmińską" class="btn btn-primary" />
+}

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><div class="header-item">Home</div></a>
+        <a href="chordscreator.html"><div class="header-item" style="background-color: #ee070d">Chords creator</div></a>
+        <a href="chords.html"><div class="header-item">Guitar chords</div></a>
+        <a href="metronome.html"><div class="header-item">Metronome</div></a>
+        <link href="styles/style.css" rel="stylesheet" type="text/css" />
+        <link href="styles/chordscreator.css" rel="stylesheet" type="text/css" />
+    </header>
+    <h1>Chords Creator</h1>
+    <canvas id="chords-creator" width="200" height="320"></canvas>
+    <section>
+        Chord name:<input id="chord-name" /><button onclick="SaveChord()">Save</button>
+    </section>
+    <section class="text-section">
+        How to use:<br />
+        Click on the choosen string and fret to set the marker. <br />
+        Click above the fretboard to set the string marker to open. If the string is set to open (O), next click will change string state to muted (X).<br />
+        If you want to save the chord, type your chord name into the textbox and click<button>Save</button>button.<br />
+        After saving, chord will be visible in the Guitar chords page.<br />
+        If you want to change the chord, use save function with the name of the chord you would like to change, this will override the original chord.<br />
+        To save the chord as an image, just simply save the image using right mouse button
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/chordscreator.js"></script>
+    <script>SetupChordsCreatorCanvas();</script>
+</body>
+</html>
