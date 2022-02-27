@@ -92,3 +92,14 @@ The application is digitalized version of the notice board known from the Witche
 ![S2](/Lab5-razor-sql/screen_contracts.png)
   
 </details>
+
+## Lab6 - REST WebApi 
+[link](Lab6-webapi)
+
+The sixth exercise was to create a simple REST WebApi with at least two models. The API has Swagger connected to visualize endpoints
+
+<details><summary>Swagger endpoints</summary>
+
+![swagger](/Lab6-webapi/swagger.JPG)
+  
+</details>
