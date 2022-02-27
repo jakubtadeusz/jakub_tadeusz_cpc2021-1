@@ -107,14 +107,30 @@ The sixth exercise was to create a simple REST WebApi with at least two models. 
 ## Lab7 - React.js
 [link](Lab7-react)
 
-The sixth exercise was to create the React.js web application, with the data from the [placeholder json api](https://jsonplaceholder.typicode.com).
+The seventh exercise was to create the React.js web application, with the data from the [placeholder json api](https://jsonplaceholder.typicode.com).
 This application is a simple social media like website, where user can add posts or comments.
-
 
 <details><summary>Application screenshots</summary>
 
 ![S1](/Lab7-react/S1.JPG)
   
 ![S2](/Lab7-react/S2.JPG) 
+  
+</details>
+
+## Lab7 - React.js + REST API
+[link](Lab8-react-api)
+
+The eighth and last exercise was to create the React.js website with the connection to the API based on ASP.NET Core with Entity Framework.
+The purpose of this app is to help people with the choice of the tracks during the longboarding sessions. As length and elevation are both the important factors while choosing the path for longboarding, both of these values are stored in the database.
+To help user find the path with the selected length, API uses Dijkstra Algorithm, but instead of finding the shortest/longests path, it is looking for the vertices where sum of the lengths is closest to the given path length. It is not the optimised solution for the problem, but it somehow works.
+
+<details><summary>Application screenshots</summary>
+
+![S1](/Lab8-react-api/S1.JPG)
+  
+![S2](/Lab8-react-api/S2.JPG) 
+  
+![S3](/Lab8-react-api/S3.JPG) 
   
 </details>
