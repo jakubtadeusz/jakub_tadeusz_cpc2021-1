@@ -63,3 +63,20 @@ The webpage includes three functionalities:
 ![S4](/Lab3-html-js-css/S4.JPG)
   
 </details>
+
+## Lab4 - Razor
+[link](Lab4-razor)
+
+The fourth exercise was to create the simple website using ASP.NET Razor.
+The finished webpage is a site resembling music DVD shops, with features like simplified cart or mock form to submit request for a new album.
+
+
+<details><summary>Application screenshots</summary>
+
+![S1](/Lab4-razor/screen1.JPG)
+  
+![S2](/Lab4-razor/screen2.JPG)
+  
+
+  
+</details>
