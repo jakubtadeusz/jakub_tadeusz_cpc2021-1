@@ -118,7 +118,7 @@ This application is a simple social media like website, where user can add posts
   
 </details>
 
-## Lab7 - React.js + REST API
+## Lab8 - React.js + REST API
 [link](Lab8-react-api)
 
 The eighth and last exercise was to create the React.js website with the connection to the API based on ASP.NET Core with Entity Framework.
