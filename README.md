@@ -1,7 +1,7 @@
 # jakub_tadeusz_cpc2021-1
 Repository with homework projects created for KN Kredek CPC 2021-1 course 
 
-Each of the projects uses different technologies learned during the course.
+Each of the projects use different technologies learned during the course.
 
 ## Lab1 - Windows Forms 
 [link](Lab1-forms)
