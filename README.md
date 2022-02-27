@@ -77,6 +77,18 @@ The finished webpage is a site resembling music DVD shops, with features like si
   
 ![S2](/Lab4-razor/screen2.JPG)
   
+</details>
 
+## Lab5 - Razor with Entity Framework
+[link](Lab5-razor-sql)
+
+The fifth exercise was to create a Razor website with the usage of SQL database, using Entity Framework. Database was created using the code first approach.
+The application is digitalized version of the notice board known from the Witcher games series.
+
+<details><summary>Application screenshots</summary>
+
+![S1](/Lab5-razor-sql/screen_index.png)
+  
+![S2](/Lab5-razor-sql/screen_contracts.png)
   
 </details>
