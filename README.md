@@ -103,3 +103,18 @@ The sixth exercise was to create a simple REST WebApi with at least two models. 
 ![swagger](/Lab6-webapi/swagger.JPG)
   
 </details>
+
+## Lab7 - React.js
+[link](Lab7-react)
+
+The sixth exercise was to create the React.js web application, with the data from the [placeholder json api](https://jsonplaceholder.typicode.com).
+This application is a simple social media like website, where user can add posts or comments.
+
+
+<details><summary>Application screenshots</summary>
+
+![S1](/Lab7-react/S1.JPG)
+  
+![S2](/Lab7-react/S2.JPG) 
+  
+</details>
