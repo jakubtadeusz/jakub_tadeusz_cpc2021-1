@@ -42,3 +42,24 @@ Employee may add new customer, contract, deposit or cash payment. Contracts are 
 ![S5](/Lab2-forms-sql/S5.JPG)
   
 </details>
+
+## Lab3 - HTML + CSS + JS
+[link](Lab3-html-js-css)
+
+The third exercise was to create a simple HTML webpage, with the CSS styling and JS scripts. The requirement for the site was to contain some kind of between subpages communication.
+The webpage includes three functionalities:
+- Chords creator - by clicking on the guitar frets, user can generate image with the guitar chord of choice. The finished chord can be saved as image by right-click or saved in the Guitar chords menu using the save button. To create the chords and handle user input, JS script uses canvas element and mouse click position.
+- Guitar chords - in this menu, user can view default or saved guitar chords
+- Metronome - basic metronome, user can customize amount of beats and then play them in the choosen BPM. Each beat can be one of two sounds, marked by the circle color.
+
+<details><summary>Application screenshots</summary>
+
+![S1](/Lab3-html-js-css/S1.JPG)
+  
+![S2](/Lab3-html-js-css/S2.JPG)
+  
+![S3](/Lab3-html-js-css/S3.JPG)
+  
+![S4](/Lab3-html-js-css/S4.JPG)
+  
+</details>
