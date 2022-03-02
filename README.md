@@ -52,6 +52,8 @@ The webpage includes three functionalities:
 - Guitar chords - in this menu, user can view default or saved guitar chords
 - Metronome - basic metronome, user can customize amount of beats and then play them in the choosen BPM. Each beat can be one of two sounds, marked by the circle color.
 
+[Live link](https://jakubtadeusz.github.io/jakub_tadeusz_cpc2021-1/Lab3-html-js-css/JakubTadeuszLab3ZadDom/JakubTadeuszLab3ZadDom/index.html)
+
 <details><summary>Application screenshots</summary>
 
 ![S1](/Lab3-html-js-css/S1.JPG)
